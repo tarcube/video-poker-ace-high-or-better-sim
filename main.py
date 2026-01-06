@@ -269,6 +269,8 @@ async def main():
                 sys.exit()
 
             if not dealing:
+                if event.type == pygame.FINGERDOWN:
+                    shuffling = True
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_SPACE:
                         shuffling = True
@@ -277,6 +279,10 @@ async def main():
                     if event.key == pygame.K_DOWN:
                         bet = max(0.1, bet-0.1)
 
+                if event.type == pygame.FINGERUP:
+                    shuffling = False
+                    deal_triggered = True
+                    money -= 10.0 * bet
                 if event.type == pygame.KEYUP:
                     if event.key == pygame.K_SPACE:
                         shuffling = False
