@@ -230,7 +230,7 @@ def holy_yap():
 async def main():
     static1 = generate_static(False)
     static2 = generate_static(True)
-    pygame.mixer.music.load("ts_song_full_of_whimsy.mp3")
+    pygame.mixer.music.load("ts_song_full_of_whimsy.ogg")
     pygame.mixer.music.play(-1)
     deck = get_new_deck()
     board = []
